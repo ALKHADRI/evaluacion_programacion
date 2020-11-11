@@ -1,0 +1,37 @@
+program funcion1;
+USES CRT;
+VAR
+c:int64;
+a:int64;
+b:int64;
+i:int64;
+n:int64;
+procedure serie_Fibonaccio();
+ begin
+ a:= 0;
+ b:= 1;
+ end;
+  begin
+     begin
+     writeln('Ingrese un numero para saber si es de la serie Fibonaccio');
+      readln(n);
+      writeln;
+       serie_fibonaccio;
+       end;
+       repeat
+       begin
+       c:= a+b;
+       a:= c+b;
+       b:= a+c;
+       writeln(c);
+       writeln(a);
+       writeln(b);
+       end;
+       until (a>=n) or (b>=n) or (c>=n);
+       begin
+        if (n=a) or (n=b) or (n=c) then
+           writeln('El numero ',n,' Se encuentra en la serie de Fibonaccio')
+          else
+            writeln('El numero ',n,' No esta en la serie de Fibonaccio');
+      end; 
+  end.

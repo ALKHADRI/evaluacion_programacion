@@ -1,0 +1,103 @@
+program funcion3;
+uses crt;
+var
+numero:array[1..4] of int64;
+numeromayor:int64;
+i:int64;
+numeromenor:int64;
+numerointa:int64;
+numerointb:int64;
+procedure metodo1; //METODO EN CASO DE QUE SEA MAYOR INTA
+begin
+    writeln(numeromayor);
+    writeln(numerointa);
+    writeln(numerointb);
+    writeln(numeromenor);
+end;
+procedure metodo2; //METODO EN CASO DE QUE SEA INTOB SEA MAYOR
+begin
+    writeln(numeromayor);
+    writeln(numerointb);
+    writeln(numerointa);
+    writeln(numeromenor);
+end;
+procedure metodo3; //METODO EN CASO DE QUE IGUAL INTA Y INTB
+begin
+    writeln(numeromayor);
+    writeln(numerointa);
+    writeln(numerointa);
+    writeln(numeromenor);
+end;
+procedure metodo4; //METODO EN CASO DE QUE IGUAL INTA Y INTB
+begin
+    writeln(numeromayor);
+    writeln(numerointb);
+    writeln(numerointb);
+    writeln(numeromenor);
+end;
+begin 
+    begin
+    writeln('Ingrese el primer numero');
+    readln(numero[1]);
+    writeln('Ingrese el segundo numero');
+    readln(numero[2]);
+    writeln('Ingrese el tercer numero');
+    readln(numero[3]);
+    writeln('Ingrese el cuarto numero');
+    readln(numero[4]);
+    end;
+    begin //Numero mayor
+    if (numero[1]>numero[2]) and (numero[1]>numero[3]) and (numero[1]>numero[4]) then
+    numeromayor:= numero[1];
+    if (numero[2]>numero[1]) and (numero[2]>numero[3]) and (numero[2]>numero[4]) then
+    numeromayor:= numero[2];
+    if (numero[3]>numero[1]) and (numero[3]>numero[2]) and (numero[3]>numero[4]) then
+    numeromayor:= numero[3];
+    if (numero[4]>numero[1]) and (numero[4]>numero[2]) and (numero[4]>numero[3]) then
+    numeromayor:= numero[4];
+    end;  
+    begin //numero menor
+    if (numero[1]<numero[2]) and (numero[1]<numero[3]) and (numero[1]<numero[4]) then
+    numeromenor:= numero[1];
+    if (numero[2]<numero[1]) and (numero[2]<numero[3]) and (numero[2]<numero[4]) then
+    numeromenor:= numero[2];
+    if (numero[3]<numero[1]) and (numero[3]<numero[2]) and (numero[3]<numero[4]) then
+    numeromayor:= numero[3];
+    if (numero[4]<numero[1]) and (numero[4]<numero[2]) and (numero[4]<numero[3]) then
+    numeromenor:= numero[4];
+    end;
+    begin //numero intermedio a
+    if (numero[1]<numeromayor) and (numero[1]>numeromenor) then
+    numerointa:= numero[1];
+    if (numero[2]<numeromayor) and (numero[2]>numeromenor) then
+    numerointa:= numero[2];
+    if (numero[3]<numeromayor) and (numero[3]>numeromenor) then
+    numerointa:= numero[3];
+    if (numero[4]<numeromayor) and (numero[4]>numeromenor) then
+    numerointa:= numero[4];
+    end;
+    begin //numero intermedio b
+    if (numero[1]<>numeromayor) and (numero[1]<>numeromenor) and (numero[1]<>numerointa) then
+    numerointb:= numero[1];
+    if (numero[2]<>numeromayor) and (numero[2]<>numeromenor) and (numero[2]<>numerointa) then 
+    numerointb:= numero[2];
+    if (numero[3]<>numeromayor) and (numero[3]<>numeromenor) and (numero[3]<>numerointa) then
+    numerointb:= numero[3];
+    if (numero[4]<>numeromayor) and (numero[4]<>numeromenor) and (numero[4]<>numerointa) then
+    numerointb:= numero[4];
+    end;
+    begin
+    writeln;
+    writeln('ORDENANDO DE MAYOR A MENOR');
+    if (numerointa=0) then
+    metodo4()
+    else if (numerointb=0) then
+    metodo3()
+    else if (numerointa>numerointb) then
+    metodo1()
+  else  if (numerointa<numerointb) then
+    metodo2()
+  else  if (numerointa=numerointb) then
+    metodo3();
+    end;
+end.
